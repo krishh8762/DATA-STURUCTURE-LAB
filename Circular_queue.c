@@ -6,17 +6,14 @@ int queue[MAX];
 int front = -1;
 int rear = -1;
 
-// Enqueue operation
 void enqueue(int item)
 {
-    // Check for overflow
     if ((rear + 1) % MAX == front)
     {
         printf("Queue Overflow\n");
         return;
     }
-
-    // First element
+    
     if (front == -1)
     {
         front = 0;
@@ -31,12 +28,10 @@ void enqueue(int item)
     printf("%d inserted into queue.\n", item);
 }
 
-// Dequeue operation
 void dequeue()
 {
     int item;
 
-    // Check for underflow
     if (front == -1)
     {
         printf("Queue Underflow\n");
@@ -45,7 +40,6 @@ void dequeue()
 
     item = queue[front];
 
-    // Only one element
     if (front == rear)
     {
         front = -1;
